@@ -19,6 +19,8 @@ public class LoaderFactory {
         Loader loader = null;
         if(LoaderType.CSV.equals(loaderType)){
             loader = new CSVDataLoader();
+        }else if(LoaderType.CSV_JSON.equals(loaderType)){
+        	loader = new CSVJSONDataLoader();
         }else if(LoaderType.EXCEL.equals(loaderType)){
         	loader = new ExcelDataLoader();
         }else if(LoaderType.XML.equals(loaderType)){

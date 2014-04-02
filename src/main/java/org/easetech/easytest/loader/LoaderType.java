@@ -18,7 +18,13 @@ public enum LoaderType {
      * Identifies that the type of file is a framework based CSV file. 
      * This file should support the structure as identified in {@link CSVDataLoader}
      */
-    CSV ,
+    CSV,
+
+    /**
+     * Identifies that the type of file is a framework based CSV file that contains JSON values.
+     * This file should support the structure as identified in {@link CSVJSONDataLoader}
+     */
+    CSV_JSON,
     /**
      * Identifies that the type of file is a framework based XML file.
      * This is currently just a place holder and will be supported in future.

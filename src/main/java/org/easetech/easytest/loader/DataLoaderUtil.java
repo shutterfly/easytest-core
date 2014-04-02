@@ -159,17 +159,19 @@ public final class DataLoaderUtil {
     }
 
     /**
-     * Return the laoder type based on file extension
+     * Return the loader type based on file extension
      * 
      * @param filePath the file path
      * @return {@link LoaderType} based on file extension
      */
-    private static LoaderType resolveFileExtension(String filePath) {
+    static LoaderType resolveFileExtension(String filePath) {
         if (filePath == null || filePath == "") {
             return LoaderType.CUSTOM;
         }
         if (filePath.endsWith("csv")) {
             return LoaderType.CSV;
+        } else if (filePath.endsWith("csv-json")){
+            return LoaderType.CSV_JSON;
         } else if (filePath.endsWith("xls")) {
             return LoaderType.EXCEL;
         } else if (filePath.endsWith("xml")) {
