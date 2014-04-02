@@ -170,6 +170,8 @@ public final class DataLoaderUtil {
         }
         if (filePath.endsWith("csv")) {
             return LoaderType.CSV;
+        } else if (filePath.endsWith("csv-json")){
+            return LoaderType.CSV_JSON;
         } else if (filePath.endsWith("xls")) {
             return LoaderType.EXCEL;
         } else if (filePath.endsWith("xml")) {

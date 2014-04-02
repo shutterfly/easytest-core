@@ -12,6 +12,11 @@ public class DataLoaderUtilTest {
     }
 
     @Test
+    public void CSV_JSON_loader_should_resolve_for_file_extension_csv(){
+        assertEquals(LoaderType.CSV_JSON, DataLoaderUtil.resolveFileExtension("csv-json"));
+    }
+
+    @Test
     public void Excel_loader_should_resolve_for_file_extension_xls(){
         assertEquals(LoaderType.EXCEL, DataLoaderUtil.resolveFileExtension("xls"));
     }

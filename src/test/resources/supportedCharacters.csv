@@ -1,0 +1,15 @@
+single_quote_is_part_of_value_and_is_preserved,value1,value2
+,','value2'
+double_quote_encapsulates_value_and_is_stripped,value1,value2
+,"",value2
+double_quote_can_be_used_to_within_a_field,value1,value2,value3
+,"aaa","b""bb","ccc"
+alphanumeric_characters_are_supported,lowercase,uppercase,numbers
+,abcdefghijklmnopqrstuvwxyz,ABCDEFGHIJKLMNOPQRSTUVWXYZ,0123456789
+symbolic_characters_are_supported,symbols
+,-=!@#$%^&*()_+/\[]{}
+punctuation_characters_are_supported,punctuation,comma
+,`~.?;:',","
+line_breaks_are_supported,value
+,"line
+break"

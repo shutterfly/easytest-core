@@ -113,7 +113,7 @@ public class CSVDataLoader implements Loader {
      * @return a map of data
      * @throws IOException if an IO exception occurs
      */
-    private static Map<String, List<Map<String, Object>>> loadFromSpreadsheet(final InputStream csvFile)
+    private Map<String, List<Map<String, Object>>> loadFromSpreadsheet(final InputStream csvFile)
         throws IOException {
         Map<String, List<Map<String, Object>>> data = new HashMap<String, List<Map<String, Object>>>();
         CsvReader csvReader = new CsvReader(new InputStreamReader(csvFile), COMMA_SEPARATOR);
@@ -154,16 +154,20 @@ public class CSVDataLoader implements Loader {
         return data;
 
     }
-    
+
     /**
-     * Normalize the string that is read from a CSV file for JSON conversion if required
-     * @param value the string to normalize
-     * @return the normalized string
+     * Normalize the value retrieved from the csv file prior to storing-it; this method
+     * primarily exists so that extenders can over-ride it and modify data on its way to the
+     * test method.
+     *
+     * @param original
+     * @return
      */
-    private static String normalize(String value){
-        return value.replaceAll(SINGLE_QUOTE, DOUBLE_QUOTE).replaceAll(AMPERSAND, COMMA);
+    protected String normalize(String original){
+        //no-op in CSVDataLoader; merely provide a method that can be overridden
+        return original;
     }
-    
+
     /**
      * Write the data back to the file that is represented by the Resource instance
      * @param resource the resource instance to which teh data needs to be written
