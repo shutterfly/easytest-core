@@ -371,7 +371,7 @@ public class CSVDataLoader implements Loader {
     }
     
     
-    private void writeOutputData(Map<String, Object> currentRowData, String[] finalValues , String[] dataKeys ){
+    static void writeOutputData(Map<String, Object> currentRowData, String[] finalValues , String[] dataKeys ){
         if(currentRowData.get(TEST_STATUS) != null){
             //Write Actual Result, Test Status and Duration fields
             finalValues[dataKeys.length - 3] = currentRowData.get(ACTUAL_RESULT).toString();
@@ -381,7 +381,7 @@ public class CSVDataLoader implements Loader {
             //Write Actual Result and Duration
             finalValues[dataKeys.length - 2] = currentRowData.get(ACTUAL_RESULT).toString();
             finalValues[dataKeys.length - 1] = currentRowData.get(DURATION).toString();
-        }else{
+        }else if (currentRowData.get(DURATION) != null){
             //Write Only Duration
             finalValues[dataKeys.length - 1] = currentRowData.get(DURATION).toString();
         }
